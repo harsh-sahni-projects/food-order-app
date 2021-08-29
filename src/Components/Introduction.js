@@ -6,7 +6,7 @@ import styles from './Introduction.module.css';
 const Introduction = () => {
     return (
         <Fragment>
-            <img src="/meals.jpg" />
+            <img src="/meals.jpg" alt="Food items"/>
             <Card className={styles['description-container']}>
                 {/* <section className={classes.summary}> */}
                     <h2>Delicious Food, Delivered To You</h2>

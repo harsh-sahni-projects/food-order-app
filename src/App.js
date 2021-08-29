@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from './Components/Header'
 import Introduction from './Components/Introduction';
 import Menu from './Components/Menu';
+import Modal from './Components/Modal';
 
 function App() {
 
@@ -32,11 +33,29 @@ function App() {
     },
   ];
 
+  let cartItems = []
+  
+  const [isCartVisible, setCartVisibility] = useState(false);
+
+  const showCart = () => {
+      setCartVisibility(true);
+  }
+
+  const hideCart = () => {
+      setCartVisibility(false);
+  }
+
+  const placeOrder = () => {
+    console.log('Ordering...');
+    hideCart();
+  }
+
   return (
     <React.Fragment>
-      <Header/>
+      <Header onShowCart={showCart}/>
       <Introduction />
       <Menu meals={DUMMY_MEALS} />
+      {isCartVisible && <Modal title="Cart" onConfirm={placeOrder} onCancel={hideCart} />}
     </React.Fragment>
   );
 }

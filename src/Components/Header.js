@@ -1,13 +1,13 @@
 import HeaderCartButton from './HeaderCartButton';
-
 import styles from './Header.module.css';
 
 
-const Header = () => {
+
+const Header = (props) => {
     return (
         <div className={styles.header}>
             <span className={styles.heading}>Meals</span>
-            <HeaderCartButton/>
+            <HeaderCartButton onClick={props.onShowCart}/>
         </div>
     )
 }

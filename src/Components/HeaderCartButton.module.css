@@ -1,0 +1,10 @@
+.badge {
+    margin: 0rem 1rem;
+    padding: 0.25rem 1rem;
+    background-color: #b94517;
+    border-radius: 25px;
+}
+
+.button:hover .badge {
+    background-color: #92320c;
+}

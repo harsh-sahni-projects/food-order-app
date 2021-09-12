@@ -5,7 +5,7 @@ import Button from '../UI/Button';
 const HeaderCartButton = (props) => {
     return (
         <Button className={styles.button} onClick={props.onClick}>
-            Your Cart
+            <span>Your cart</span>
             <span className={styles.badge}>0</span>
         </Button>
     )

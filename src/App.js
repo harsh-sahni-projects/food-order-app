@@ -3,6 +3,7 @@ import Header from './Components/Header'
 import Introduction from './Components/Introduction';
 import Menu from './Components/Menu';
 import Modal from './Components/Modal';
+import CartProvider from "./store/CartProvider";
 
 function App() {
 
@@ -51,12 +52,12 @@ function App() {
   }
 
   return (
-    <React.Fragment>
+    <CartProvider>
+      {isCartVisible && <Modal title="Cart" onConfirm={placeOrder} onCancel={hideCart} />}
       <Header onShowCart={showCart}/>
       <Introduction />
       <Menu meals={DUMMY_MEALS} />
-      {isCartVisible && <Modal title="Cart" onConfirm={placeOrder} onCancel={hideCart} />}
-    </React.Fragment>
+    </CartProvider>
   );
 }
 

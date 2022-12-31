@@ -10,15 +10,24 @@ const MealItem = (props) => {
     // itemCount.current.value = 0;
 
     const addToCart = () => {
-        if (!itemCount.current.value) {
-            return;
+        const item = {
+            name: props.name,
+            id: props.id,
+            quantity: parseInt(itemCount.current.value),
+            price: parseFloat(parseFloat(itemCount.current.value * props.price).toFixed(2)) // toFixed() converts it to string, so agian using parseFloat to again convert it into number
         }
-        const itemName = props.name;
-        const reqItemCount = parseInt(itemCount.current.value, 10);
+        console.log('--')
+        console.log(item);
+        cartCtx.addItem(item);
+        // if (!itemCount.current.value) {
+        //     return;
+        // }
+        // const itemName = props.name;
+        // const reqItemCount = parseInt(itemCount.current.value, 10);
         
-        cartCtx[itemName] = (cartCtx[itemName]) ? cartCtx[itemName] + reqItemCount : reqItemCount;
+        // cartCtx[itemName] = (cartCtx[itemName]) ? cartCtx[itemName] + reqItemCount : reqItemCount;
         
-        console.log(cartCtx);
+        // console.log(cartCtx);
     }
 
     return (

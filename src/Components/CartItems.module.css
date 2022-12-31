@@ -1,0 +1,35 @@
+.div {
+    /* border: 1px solid red; */
+    margin: 15px;
+}
+td, th {
+    /* border: 1px solid green; */
+    width: 25%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.itemContainer {
+    width: 100%;
+    border: 1px solid;
+    /* display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between; */
+}
+
+.itemContainer span {
+    /* width: 30%; */
+    /* border: 1px solid red */
+}
+
+.name {
+ text-align: left;
+}
+
+.quantity, .unitPrice {
+    text-align: center;
+}
+
+.total {
+    text-align: right;
+}

@@ -9,26 +9,27 @@ const MealItem = (props) => {
     const itemCount = useRef(0);
     // itemCount.current.value = 0;
 
+    const _getPurchaseAmount = (quantity, perUnitPrice) => {
+        return parseFloat(
+                parseFloat(quantity * perUnitPrice).toFixed(2)
+            )
+    }
+
     const addToCart = () => {
+        const quantity = parseInt(itemCount.current.value);
         const item = {
             name: props.name,
             id: props.id,
-            quantity: parseInt(itemCount.current.value),
-            price: parseFloat(parseFloat(itemCount.current.value * props.price).toFixed(2)) // toFixed() converts it to string, so agian using parseFloat to again convert it into number
+            quantity,
+            singleUnitPrice: props.price,
+            itemPurchaseAmount: _getPurchaseAmount(quantity, props.price)
         }
         console.log('--')
         console.log(item);
         cartCtx.addItem(item);
-        // if (!itemCount.current.value) {
-        //     return;
-        // }
-        // const itemName = props.name;
-        // const reqItemCount = parseInt(itemCount.current.value, 10);
-        
-        // cartCtx[itemName] = (cartCtx[itemName]) ? cartCtx[itemName] + reqItemCount : reqItemCount;
-        
-        // console.log(cartCtx);
+
     }
+
 
     return (
         <div className={styles.container}>

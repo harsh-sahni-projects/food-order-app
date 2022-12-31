@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactDOM from 'react-dom';
 
 import styles from './Modal.module.css';
 import Card from './Card';
 import Button from '../UI/Button';
 import CartItems from './CartItems';
-
+import CartContext from '../store/cart-context';
 
 const Backdrop = (props) => {
     return (
@@ -14,12 +14,7 @@ const Backdrop = (props) => {
 }
 
 const Modal = (props) => {
-    const tempCartItems = [{id: 'item1', name: 'sushi', amount: 2, price: 10}]
-    const cartItems = <ul className={styles["cart-items-list"]}>
-        {tempCartItems.map(cartItem => (
-            <li key={cartItem.id}>{cartItem.name}</li>
-        ))}
-    </ul>
+    const ctx = useContext(CartContext);
 
     return (
         <Card className={styles.modal}>
@@ -28,13 +23,15 @@ const Modal = (props) => {
                     {props.title}
                 </h2>
             </header>
+            
             <div className={styles.content}>
-                    {cartItems}
-                    {/* <CartItems/> */}
+                    {/* {cartItems} */}
+                    <CartItems/>
             </div>
+
             <div className={styles['total-container']}>
                 <span>Total Amount</span>
-                <span>$33.44</span>
+                <span>${ctx.totalAmount}</span>
             </div>
             <footer className={styles.actions}>
                 <Button onClick={props.onCancel} className={styles.cancelBtn}>Cancel</Button>

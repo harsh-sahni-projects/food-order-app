@@ -15,6 +15,7 @@ const Backdrop = (props) => {
 
 const Modal = (props) => {
     const ctx = useContext(CartContext);
+    const cartEmpty = ctx.items.length == 0;
 
     return (
         <Card className={styles.modal}>
@@ -25,17 +26,19 @@ const Modal = (props) => {
             </header>
             
             <div className={styles.content}>
-                    {/* {cartItems} */}
                     <CartItems/>
             </div>
-
-            <div className={styles['total-container']}>
-                <span>Total Amount</span>
-                <span>${ctx.totalAmount}</span>
-            </div>
+            {!cartEmpty && 
+                <div className={styles['total-container']}>
+                    <span>Total Amount</span>
+                    <span>${ctx.totalAmount}</span>
+                </div>
+            }
             <footer className={styles.actions}>
                 <Button onClick={props.onCancel} className={styles.cancelBtn}>Cancel</Button>
-                <Button onClick={props.onConfirm}>Place order</Button>
+                {!cartEmpty && 
+                    <Button onClick={props.onConfirm}>Place order</Button>
+                }
             </footer>
         </Card>
     )

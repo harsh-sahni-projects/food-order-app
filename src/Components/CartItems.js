@@ -5,10 +5,12 @@ import CartCtx from '../store/cart-context';
 const CartItems = () => {
     const ctx = useContext(CartCtx);
     // const cartItems = ctx['cartItems'];
+    const cartEmpty = ctx.items.length == 0;
 
     return (
         <div className={styles.div}>
-            <table className={styles.itemContainer}>
+            {cartEmpty && <em className={styles.note}>Your cart is empty. Please add some items.</em>}
+            {!cartEmpty && <table className={styles.itemContainer}>
                 <thead>
                     <tr>
                         <th className={styles.name}>Name</th>
@@ -19,7 +21,7 @@ const CartItems = () => {
                 </thead>
                 <tbody>
                     {ctx.items.map(item => (
-                        <tr>
+                        <tr key={item.id}>
                             <td className={styles.name}>
                                 {item.name}
                             </td>
@@ -36,11 +38,8 @@ const CartItems = () => {
                     ))}
 
                 </tbody>
-                </table>
-            {/* {ctx.totalAmount} */}
-            {/* {Object.keys(cartItems).map(item => (
-                <div>{item.name}</div>
-            ))} */}
+            </table>}
+            
         </div>
     )
 }

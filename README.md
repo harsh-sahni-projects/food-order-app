@@ -8,3 +8,7 @@ Core concepts used in this app:
 > useRef Hook
 > useContext Hook
 > React Fragment
+
+# Screenshots
+
+<img src="./public/homepage.png" width="500">

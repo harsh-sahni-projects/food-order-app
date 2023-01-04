@@ -18,7 +18,6 @@ const defaultCartState = {
 
 const cartReducer = (state, action) => {
     if (action.type === 'ADD') {
-        console.log('adding...');
         const newItem = action.item;
         const index = state.items.findIndex(i => i.id == newItem.id);
         
@@ -38,7 +37,6 @@ const cartReducer = (state, action) => {
                                     parseFloat(state.totalAmount)
                                         .toFixed(2)
                                 );
-        console.log(state);
         /*
             If I simply return updated 'state' here, it silently change the state
             in useReducer but will not rerender the components because state seems to be

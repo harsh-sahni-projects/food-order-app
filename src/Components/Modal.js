@@ -35,7 +35,7 @@ const Modal = (props) => {
                 </div>
             }
             <footer className={styles.actions}>
-                <Button onClick={props.onCancel} className={styles.cancelBtn}>Cancel</Button>
+                <Button onClick={props.onCancel} className={styles.cancelBtn}>Close</Button>
                 {!cartEmpty && 
                     <Button onClick={props.onConfirm}>Place order</Button>
                 }

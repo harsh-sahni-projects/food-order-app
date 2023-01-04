@@ -28,6 +28,11 @@
     font-weight: bold;
 }
 
+.content {
+    max-height: 12em;
+    overflow-y: auto;
+    min-height: 30px;
+}
 header {
     padding: 1rem;
 }
@@ -43,11 +48,14 @@ header {
 }
 
 .cancelBtn {
-    background-color: #555;
+    background-color: white;
+    color: #4d1601;
+    border: 1px solid #4d1601;
     margin-right: 20px;
 }
 .cancelBtn:hover {
-    background-color: #444;
+    background-color: #4d1601;
+    color: white;
 }
 
 @media (min-width: 768px) {

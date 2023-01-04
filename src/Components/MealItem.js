@@ -24,8 +24,6 @@ const MealItem = (props) => {
             singleUnitPrice: props.price,
             itemPurchaseAmount: _getPurchaseAmount(quantity, props.price)
         }
-        console.log('--')
-        console.log(item);
         cartCtx.addItem(item);
 
     }

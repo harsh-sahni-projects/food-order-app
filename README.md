@@ -3,12 +3,18 @@ This is a demo food order app made in ReactJS. You can add food items in your ca
 
 Core concepts used in this app:
 
-> React Context API
-> useState Hook
-> useRef Hook
-> useContext Hook
-> React Fragment
+- React Context API
+- useState Hook
+- useRef Hook
+- useContext Hook
+- React Fragment
 
 # Screenshots
 
-<img src="./public/homepage.png" width="500">
+### Homepage
+
+<img src="./public/homepage.png" width="700">
+
+### Cart
+
+<img src="./public/cart.png" width="700">

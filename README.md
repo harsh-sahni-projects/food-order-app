@@ -7,14 +7,17 @@ Core concepts used in this app:
 - useState Hook
 - useRef Hook
 - useContext Hook
+- useReducer Hook
 - React Fragment
+- React Portal
+- props
 
 # Screenshots
 
 ### Homepage
 
-<img src="./public/homepage.png" width="700">
+<img src="./public/homepage.png">
 
 ### Cart
 
-<img src="./public/cart.png" width="700">
+<img src="./public/cart.png">

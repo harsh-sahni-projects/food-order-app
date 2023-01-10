@@ -3,6 +3,9 @@
     justify-content: space-between ;
     background: #8a2b06;
     padding: 1rem 4rem;
+    box-sizing: border-box;
+    position: fixed;
+    width: 100%;
 }
 
 .heading {

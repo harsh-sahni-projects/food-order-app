@@ -3,6 +3,7 @@ import Header from './Components/Header'
 import Introduction from './Components/Introduction';
 import Menu from './Components/Menu';
 import Modal from './Components/Modal';
+import Footer from './Components/Footer';
 import CartProvider from "./store/CartProvider";
 
 function App() {
@@ -47,7 +48,7 @@ function App() {
   }
 
   const placeOrder = () => {
-    console.log('Ordering...');
+    alert("Order placed :)")
     hideCart();
   }
 
@@ -57,6 +58,7 @@ function App() {
       <Header onShowCart={showCart}/>
       <Introduction />
       <Menu meals={DUMMY_MEALS} />
+      <Footer />
     </CartProvider>
   );
 }

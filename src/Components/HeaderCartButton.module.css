@@ -9,6 +9,12 @@
     background-color: #92320c;
 }
 
+.cartIcon {
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+}
+
 @keyframes animateBtn {
     0%   { transform: scale(1); }
     50%  { transform: scale(2);}

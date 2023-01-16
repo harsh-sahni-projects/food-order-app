@@ -9,41 +9,61 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 .content {
-    /* max-width: 60rem; */
     width: 65rem;
-    /* border: 1px solid red; */
     display: flex;
-    color: #eee;
+    color: #aaa;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid #151515; */
 }
 
+.content > div {
+    width: 33.3%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+
+
 .left {
-    width: 70%;
-    /* border: 1px solid green; */
+    /* border: 1px solid #151515; */
+}
+
+.mid {
+    text-align: center;
+    /* border: 1px solid #151515; */
 }
 
 .right {
-    width: 30%;
-    /* border: 1px solid green; */
+    text-align: center;
+    /* border: 1px solid #151515; */
 }
 
-a {
+.container a {
     text-decoration: underline dotted;
-    /* text-decoration: none; */
-    color: #eee;
+    color: #aaa;
 }
 
 .icon {
     margin-right: 5px;
-    margin-left: 20px;
     position: relative;
     top: 2px;
 }
 
-h3 {
-    margin: 1.5rem auto;
+.githubIcon {
+    margin-left: 20px;
 }
 
 p {
     margin-bottom: 1.5rem;
+}
+
+.authorImg {
+    max-width: 10rem;
+    max-height: 10rem;
+    border-radius: 100%;
+    zoom: 100%;
+    /* border: 1px solid red; */
 }

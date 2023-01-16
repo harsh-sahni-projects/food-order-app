@@ -2,6 +2,7 @@ import styles from './HeaderCartButton.module.css';
 import Button from '../UI/Button';
 import { useContext, useEffect, useState } from 'react';
 import CartCtx from '../store/cart-context';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const HeaderCartButton = (props) => {
     const ctx = useContext(CartCtx);
@@ -16,7 +17,6 @@ const HeaderCartButton = (props) => {
     useEffect(() => {
         if (totalItems == 0) return;
 
-        console.log('Setting true')
         setAnimateBtn(true);
 
         /* We also need to clear this timer in case of this 
@@ -42,6 +42,7 @@ const HeaderCartButton = (props) => {
         <Button className={btnClasses}
                 onClick={props.onClick}
                 >
+            <FaShoppingCart className={styles.cartIcon}/>
             <span>Your cart</span>
             <span className={styles.badge}>{totalItems}</span>
         </Button>

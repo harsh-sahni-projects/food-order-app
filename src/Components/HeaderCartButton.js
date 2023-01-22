@@ -9,13 +9,12 @@ const HeaderCartButton = (props) => {
     const totalItems = ctx.items.reduce((acc,item) => {
         return acc + item.quantity
     }, 0);
-    const { items } = ctx;
 
     const [animateBtn, setAnimateBtn] = useState(false);
     const btnClasses = `${styles.button}  ${animateBtn ? styles.bump : ''}`
 
     useEffect(() => {
-        if (totalItems == 0) return;
+        if (totalItems === 0) return;
 
         setAnimateBtn(true);
 

@@ -18,7 +18,7 @@ const defaultCartState = {
 const cartReducer = (state, action) => {
     if (action.type === 'ADD') {
         const newItem = action.item;
-        const index = state.items.findIndex(i => i.id == newItem.id);
+        const index = state.items.findIndex(i => i.id === newItem.id);
         
         if (index > -1) {
             const cartItem = state.items[index];
@@ -49,11 +49,11 @@ const cartReducer = (state, action) => {
         }
     }
     if (action.type === 'REMOVE') {
-        const index = state.items.findIndex(i => i.id == action.id);
-        if (index == -1) return state;
+        const index = state.items.findIndex(i => i.id === action.id);
+        if (index === -1) return state;
 
         const item = state.items[index];
-        if (item.quantity == 1) {
+        if (item.quantity === 1) {
             state.items.splice(index,1);
         } else {
             item.quantity -= 1;

@@ -15,7 +15,7 @@ const Backdrop = (props) => {
 
 const Modal = (props) => {
     const ctx = useContext(CartContext);
-    const cartEmpty = ctx.items.length == 0;
+    const cartEmpty = ctx.items.length === 0;
 
     return (
         <Card className={styles.modal}>

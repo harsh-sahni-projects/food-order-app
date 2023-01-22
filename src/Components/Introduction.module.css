@@ -1,7 +1,22 @@
+.imgContainer {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+.imgContainer div:nth-child(1) {
+    flex-grow: 1;
+    /* background-color: #F9F8F8; */
+}
+
+.imgContainer div:nth-child(3) {
+    flex-grow: 1;
+    /* background-color: #20332C; */
+    /* background-color: #1C2A27 */
+}
 .foodImg {
     width: 100%;
-    height: 350px;
-    margin-top: 4rem;
+    max-height: 350px;
+    /* margin-top: 4rem; */
 }
 
 .description-container {

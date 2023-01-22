@@ -35,8 +35,6 @@ function App() {
     },
   ];
 
-  let cartItems = []
-  
   const [isCartVisible, setCartVisibility] = useState(false);
 
   const showCart = () => {

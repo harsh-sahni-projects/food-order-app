@@ -5,7 +5,7 @@ import CartCtx from '../store/cart-context';
 const CartItems = () => {
     const ctx = useContext(CartCtx);
     
-    const cartEmpty = ctx.items.length == 0;
+    const cartEmpty = ctx.items.length === 0;
 
     const addItem = (item) => {
         ctx.addItem({

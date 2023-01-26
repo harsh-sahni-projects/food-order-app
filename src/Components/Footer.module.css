@@ -67,3 +67,18 @@ p {
     zoom: 100%;
     /* border: 1px solid red; */
 }
+
+@media (max-width: 768px) {
+    .right p {
+        display: flex;
+        flex-direction: column;
+        /* text-align: left; */
+    }
+    .right span:nth-child(2) {
+        margin-top: 0.5rem;;
+    }
+    .githubIcon {
+        margin-left: 0px;
+    }
+    
+}

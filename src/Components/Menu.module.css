@@ -4,3 +4,10 @@
     background: white;
     padding: 1rem 2rem;
 }
+
+
+@media (max-width: 768px) {
+    .card {
+        max-width: 75%;
+    }
+}

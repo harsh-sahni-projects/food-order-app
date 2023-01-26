@@ -21,15 +21,19 @@ const Footer = () => {
                 <div className={styles.right}>
                     <h3>Links</h3>
                     <p>
-                        <FaLinkedin className={styles.icon}/>
-                        <a href="https://www.linkedin.com/in/harsh-sahni" target="_blank">
-                            Linkedin
-                        </a>
+                        <span>
+                            <FaLinkedin className={styles.icon}/>
+                            <a href="https://www.linkedin.com/in/harsh-sahni" target="_blank">
+                                Linkedin
+                            </a>
+                        </span>
                         
-                        <FaGithub className={styles.icon + " " + styles.githubIcon} />
-                        <a href="https://github.com/harsh-sahni-projects/food-order-app" target="_blank">
-                            Github
-                        </a>
+                        <span>
+                            <FaGithub className={styles.icon + " " + styles.githubIcon} />
+                            <a href="https://github.com/harsh-sahni-projects/food-order-app" target="_blank">
+                                Github
+                            </a>
+                        </span>
                     </p>
 
                 </div>

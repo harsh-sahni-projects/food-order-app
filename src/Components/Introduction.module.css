@@ -33,16 +33,9 @@
 
 @media (max-width: 768px) {
     .description-container {
-        /* background: red; */
         width: 70%;
         padding: 0.2rem 0.4rem;
         top: -1rem;
-    }
-    .description-container h2 {
-        font-size: 0.9rem;
-    }
-    .description-container {
-        font-size: 0.75rem;
     }
     .description-container p:nth-child(2) {
         display: none;

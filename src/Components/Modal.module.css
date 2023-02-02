@@ -29,7 +29,7 @@
 }
 
 .content {
-    max-height: 12em;
+    max-height: 14em;
     overflow-y: auto;
     min-height: 30px;
 }
@@ -38,7 +38,7 @@ header {
 }
 .modal h2 {
     margin: 0px;
-    font: 'Sans-serif'
+    /* font-family: 'Sans-serif' */
 }
 
 .actions {
@@ -62,5 +62,15 @@ header {
     .modal {
         left: calc(50% - 20rem);
         width: 40rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal h2 {
+        font-size: 1.2rem !important;
+    }
+    .modal .content {
+        padding: 1px;
+        /* border: 1px solid; */
     }
 }

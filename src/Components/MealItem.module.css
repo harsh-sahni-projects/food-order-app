@@ -23,7 +23,14 @@
 
 label {
     font-weight: bold;
-    margin-right: 10px;
+}
+
+.divAmountChanger {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid red; */
 }
 
 input.amount {
@@ -43,20 +50,8 @@ input.amount:focus-visible {
 }
 
 @media (max-width: 768px) {
-    .container {
-        font-size-adjust: 0.2;
-    }
-    /* .container h3 {
-        font-size: 0.9rem;
-    }
-    .description {
-        font-size: 0.9rem;
-    } */
     .container * {
         font-size: 0.9rem;
     }
-    /* .container h3 */
-    /* .container h3 */
-    /* .container h3 */
 
 }

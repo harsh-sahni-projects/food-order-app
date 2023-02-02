@@ -19,7 +19,11 @@ const CartItems = () => {
     }
     return (
         <div className={styles.div}>
-            {cartEmpty && <em className={styles.note}>Your cart is empty. Please add some items.</em>}
+            {cartEmpty && 
+                <div className={styles.emptyMsg}>
+                    <span>Your cart is empty. Please add some items.</span>
+                </div>
+            }
 
             {!cartEmpty && ctx.items.map(item => (
                 <div className={styles.container} key={item.id}>

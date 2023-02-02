@@ -52,7 +52,9 @@ function App() {
 
   return (
     <CartProvider>
-      {isCartVisible && <Modal title="Cart" onConfirm={placeOrder} onCancel={hideCart} />}
+      {isCartVisible &&
+        <Modal title="Cart" onConfirm={placeOrder} onCancel={hideCart} />
+      }
       <Header onShowCart={showCart}/>
       <Introduction />
       <Menu meals={DUMMY_MEALS} />

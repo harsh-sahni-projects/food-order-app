@@ -3,9 +3,16 @@
     border-bottom: 2px solid #4d1601;
     display: flex;
     justify-content: space-between;
-    margin: 15px;
+    margin: 0px 15px 15px 15px;
     padding-bottom: 10px;
 }
+
+.emptyMsg {
+    font-style: italic;
+    color: #aaa;
+    margin: 0px 15px;
+}
+
 .unitPrice {
     font-weight: bold;
     font-size: 14px;
@@ -56,7 +63,12 @@
     top: 10%;
 }
 
-.note {
-    color: #aaa;
-    margin: 15px;
+@media (max-width: 768px) {
+    .itemName {
+        font-size: 0.9rem;
+    }
+
+    .rightDiv button {
+        padding: 1px;
+    }
 }

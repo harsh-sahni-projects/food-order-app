@@ -19,27 +19,29 @@ const Modal = (props) => {
 
     return (
         <Card className={styles.modal}>
-            <header className={styles.header}>
-                <h2>
-                    {props.title}
-                </h2>
-            </header>
-            
-            <div className={styles.content}>
-                    <CartItems/>
-            </div>
-            {!cartEmpty && 
-                <div className={styles['total-container']}>
-                    <span>Total Amount</span>
-                    <span>${ctx.totalAmount}</span>
+            <div className={styles.modalContainer}>
+                <header className={styles.header}>
+                    <h2>
+                        {props.title}
+                    </h2>
+                </header>
+                
+                <div className={styles.content}>
+                        <CartItems/>
                 </div>
-            }
-            <footer className={styles.actions}>
-                <Button onClick={props.onCancel} className={styles.cancelBtn}>Close</Button>
                 {!cartEmpty && 
-                    <Button onClick={props.onConfirm}>Place order</Button>
+                    <div className={styles['total-container']}>
+                        <span>Total Amount</span>
+                        <span>${ctx.totalAmount}</span>
+                    </div>
                 }
-            </footer>
+                <footer className={styles.actions}>
+                    <Button onClick={props.onCancel} className={styles.cancelBtn}>Close</Button>
+                    {!cartEmpty && 
+                        <Button onClick={props.onConfirm}>Place order</Button>
+                    }
+                </footer>
+            </div>
         </Card>
     )
 }

@@ -37,7 +37,7 @@ const MealItem = (props) => {
                 <div className={styles.price}>${props.price.toFixed(2)}</div>
             </div>
             <div>
-                <div>
+                <div className={styles.divAmountChanger}>
                     <label htmlFor={props.id}>Amount</label>
                     <input className={styles.amount}
                            id={props.id}

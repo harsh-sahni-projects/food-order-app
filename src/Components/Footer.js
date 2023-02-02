@@ -23,14 +23,14 @@ const Footer = () => {
                     <p>
                         <span>
                             <FaLinkedin className={styles.icon}/>
-                            <a href="https://www.linkedin.com/in/harsh-sahni" target="_blank">
+                            <a href="https://www.linkedin.com/in/harsh-sahni" target="_blank" rel="noreferrer" >
                                 Linkedin
                             </a>
                         </span>
                         
                         <span>
                             <FaGithub className={styles.icon + " " + styles.githubIcon} />
-                            <a href="https://github.com/harsh-sahni-projects/food-order-app" target="_blank">
+                            <a href="https://github.com/harsh-sahni-projects/food-order-app" target="_blank" rel="noreferrer" >
                                 Github
                             </a>
                         </span>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from './Components/Header'
 import Introduction from './Components/Introduction';
 import Menu from './Components/Menu';
@@ -35,6 +35,28 @@ function App() {
   //   },
   // ];
 
+  const [allMeals, setAllMeals] = useState([]);
+  useEffect(() => {
+    async function populateMeals() {
+      const dbUrl = process.env.dbUrl + '/meals.json';
+      const res = await fetch(dbUrl);
+      if (!res.status === 200) return;
+  
+      const mealsJson = await res.json();
+      const tempMeals = []
+      for (let id in mealsJson) {
+        let meal = {
+          id,
+          ...mealsJson[id]
+        }
+        tempMeals.push(meal);
+      }
+      setAllMeals(tempMeals);
+    }
+
+    populateMeals();
+  }, [])
+
   const [isCartVisible, setCartVisibility] = useState(false);
 
   const showCart = () => {
@@ -57,7 +79,7 @@ function App() {
       }
       <Header onShowCart={showCart}/>
       <Introduction />
-      <Menu meals={DUMMY_MEALS} />
+      <Menu meals={allMeals} />
       <Footer />
     </CartProvider>
   );

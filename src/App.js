@@ -1,3 +1,4 @@
+import * as dotenv from 'dotenv';
 import React, { useState, useEffect } from "react";
 import Header from './Components/Header'
 import Introduction from './Components/Introduction';
@@ -6,38 +7,55 @@ import Modal from './Components/Modal';
 import Footer from './Components/Footer';
 import CartProvider from "./store/CartProvider";
 
+// const dotenv = require('dotenv');
+// const result = dotenv.config();
+// if (result.error) {
+//   console.log("ERrrr")
+//   throw result.error
+// }
+
+// console.log(result.parsed)
+
+
 function App() {
 
-  // const DUMMY_MEALS = [
-  //   {
-  //     id: 'm1',
-  //     name: 'Farmhouse Pizza',
-  //     description: 'Onion, Capsicum, Grilled Mushroom & Tomato',
-  //     price: 23,
-  //   },
-  //   {
-  //     id: 'm2',
-  //     name: 'Double Cheese Margherita',
-  //     description: 'Loaded with extra cheese',
-  //     price: 18,
-  //   },
-  //   {
-  //     id: 'm3',
-  //     name: 'Barbecue Burger',
-  //     description: 'American, raw, premium veg',
-  //     price: 12,
-  //   },
-  //   {
-  //     id: 'm4',
-  //     name: 'Green Bowl',
-  //     description: 'Healthy...and green...',
-  //     price: 12,
-  //   },
-  // ];
+  const DUMMY_MEALS = [
+    {
+      id: 'm1',
+      name: 'Farmhouse Pizza',
+      description: 'Onion, Capsicum, Grilled Mushroom & Tomato',
+      price: 23,
+    },
+    {
+      id: 'm2',
+      name: 'Double Cheese Margherita',
+      description: 'Loaded with extra cheese',
+      price: 18,
+    },
+    {
+      id: 'm3',
+      name: 'Barbecue Burger',
+      description: 'American, raw, premium veg',
+      price: 12,
+    },
+    {
+      id: 'm4',
+      name: 'Green Bowl',
+      description: 'Healthy...and green...',
+      price: 12,
+    },
+  ];
 
   const [allMeals, setAllMeals] = useState([]);
   useEffect(() => {
     async function populateMeals() {
+      dotenv.config();
+      console.log(process.env.REACT_APP_dbUrl)
+      if (!process.env.dbUrl) {
+        setAllMeals(DUMMY_MEALS);
+        return;
+      }
+
       const dbUrl = process.env.dbUrl + '/meals.json';
       const res = await fetch(dbUrl);
       if (!res.status === 200) return;

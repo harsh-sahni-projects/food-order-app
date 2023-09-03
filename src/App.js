@@ -1,4 +1,3 @@
-import * as dotenv from 'dotenv';
 import React, { useState, useEffect } from "react";
 import Header from './Components/Header'
 import Introduction from './Components/Introduction';
@@ -7,14 +6,7 @@ import Modal from './Components/Modal';
 import Footer from './Components/Footer';
 import CartProvider from "./store/CartProvider";
 
-// const dotenv = require('dotenv');
-// const result = dotenv.config();
-// if (result.error) {
-//   console.log("ERrrr")
-//   throw result.error
-// }
-
-// console.log(result.parsed)
+require('dotenv').config();
 
 
 function App() {
@@ -48,17 +40,28 @@ function App() {
 
   const [allMeals, setAllMeals] = useState([]);
   useEffect(() => {
+    (async function () {
+      // try {
+      //   let url = 'https://food-order-app-988ec-default-rtdb.firebaseio.com/meals.json';
+      //   let data = await fetch(url);
+      //   console.log(data);
+      //   console.log('some')
+      // } catch(err) {
+      //   console.log(err)
+      // }
+    })();
     async function populateMeals() {
-      dotenv.config();
-      console.log(process.env.REACT_APP_dbUrl)
-      if (!process.env.dbUrl) {
+      if (!process.env.REACT_APP_MEALS_DB_URL) {
         setAllMeals(DUMMY_MEALS);
         return;
       }
 
-      const dbUrl = process.env.dbUrl + '/meals.json';
+      const dbUrl = process.env.REACT_APP_MEALS_DB_URL;
       const res = await fetch(dbUrl);
-      if (!res.status === 200) return;
+      if (!res.status === 200) {
+        setAllMeals(DUMMY_MEALS);
+        return;
+      }
   
       const mealsJson = await res.json();
       const tempMeals = []

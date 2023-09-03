@@ -3,9 +3,12 @@ import Card from './Card';
 import MealItem from './MealItem';
 
 const Menu = (props) => {
+    const allMeals = props.meals;
+    console.log('mea', !allMeals.length)
     return (
         <Card className={styles.card}>
-        {props.meals.map((mealItem) => (
+        {(!allMeals.length) ? 'Fetching from database...' : 
+        allMeals.map((mealItem) => (
           <MealItem
             key={mealItem.id}
             id={mealItem.id}

@@ -5,6 +5,30 @@
     padding: 1rem 2rem;
 }
 
+.loadingMsg {
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.animate {
+    animation: animate 0.8s ease-in-out 0s 1 normal; 
+}
+
+@keyframes animate {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    } to {
+        transform: translateY(0px);
+        opacity: 1
+    }
+}
+
+.animate {
+
+}
+
 
 @media (max-width: 768px) {
     .card {

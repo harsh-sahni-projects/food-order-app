@@ -33,7 +33,12 @@ label {
     /* border: 1px solid red; */
 }
 
+label {
+    margin-right: 8px;
+}
+
 input.amount {
+    text-align: center;
     max-width: 40px;
     border: 1px solid #aaa;
     border-radius: 5px;
@@ -47,6 +52,12 @@ input.amount:focus-visible {
     background-color: rgb(112, 28, 28);
     min-width: 100px;
     margin-top: 0.5rem;
+}
+
+.rightDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 @media (max-width: 768px) {

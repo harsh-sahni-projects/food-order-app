@@ -40,16 +40,6 @@ function App() {
 
   const [allMeals, setAllMeals] = useState([]);
   useEffect(() => {
-    (async function () {
-      // try {
-      //   let url = 'https://food-order-app-988ec-default-rtdb.firebaseio.com/meals.json';
-      //   let data = await fetch(url);
-      //   console.log(data);
-      //   console.log('some')
-      // } catch(err) {
-      //   console.log(err)
-      // }
-    })();
     async function populateMeals() {
       if (!process.env.REACT_APP_MEALS_DB_URL) {
         setAllMeals(DUMMY_MEALS);

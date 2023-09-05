@@ -4,9 +4,15 @@ import Button from "../UI/Button";
 
 const CheckoutForm = (props) => {
   const hideFormFn = props.hideForm;
+  const getCartItems = props.getCartItems;
+
   const nameInput = useRef(null);
   const addressInput = useRef(null);
   const phoneInput = useRef(null);
+
+  const dbUrl = process.env.REACT_APP_DB_URL
+    ? process.env.REACT_APP_DB_URL + "/orders.json"
+    : null;
 
   useEffect(
     () => {
@@ -25,12 +31,36 @@ const CheckoutForm = (props) => {
   const [addressErrMsg, setAddressErrMsg] = useState("");
   const [phoneErrMsg, setPhoneErrMsg] = useState("");
 
-  const placeOrder = (event) => {
+  const placeOrder = async (event) => {
     event.preventDefault();
 
     if (anyFormError()) return;
+    if (!dbUrl) {
+      alert("Order placed :)");
+      return;
+    }
 
-    alert("Ordered");
+    const orders = getCartItems();
+    try {
+      const res = await fetch(dbUrl, {
+        method: "POST",
+        body: JSON.stringify({
+          id: nameInput.current.value,
+          address: addressInput.current.value,
+          phone: phoneInput.current.value,
+          ...orders,
+        }),
+      });
+      if (res.status === 200) {
+        const resJson = await res.json();
+        const orderID = resJson.name;
+        alert(
+          `Yay! Order placed. \nTo view your order go to orders history and add your name: ${nameInput.current.value} or your order id: ${orderID}`
+        );
+      }
+    } catch (err) {
+      alert(err.message);
+    }
   };
 
   function anyFormError() {

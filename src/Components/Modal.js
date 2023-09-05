@@ -17,6 +17,10 @@ const Modal = (props) => {
   const cartEmpty = ctx.items.length === 0;
   const [showCheckoutForm, setShowCheckoutForm] = useState(false);
 
+  const getCartItems = () => {
+    return { items: ctx.items, totalAmount: ctx.totalAmount };
+  };
+
   const hideForm = () => {
     setShowCheckoutForm(false);
   };
@@ -48,7 +52,9 @@ const Modal = (props) => {
             </div>
           )}
 
-          {showCheckoutForm && <CheckoutForm hideForm={hideForm} />}
+          {showCheckoutForm && (
+            <CheckoutForm getCartItems={getCartItems} hideForm={hideForm} />
+          )}
         </div>
 
         {!showCheckoutForm && (

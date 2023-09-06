@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import ReactDOM from "react-dom";
 
 import styles from "./Modal.module.css";
@@ -53,7 +53,11 @@ const Modal = (props) => {
           )}
 
           {showCheckoutForm && (
-            <CheckoutForm getCartItems={getCartItems} hideForm={hideForm} />
+            <CheckoutForm
+              getCartItems={getCartItems}
+              hideForm={hideForm}
+              closeForm={props.onCancel}
+            />
           )}
         </div>
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Header from "./Components/Header";
 import Introduction from "./Components/Introduction";
 import Menu from "./Components/Menu";
@@ -9,35 +9,39 @@ import CartProvider from "./store/CartProvider";
 require("dotenv").config();
 
 function App() {
-  const DUMMY_MEALS = [
-    {
-      id: "m1",
-      name: "Farmhouse Pizza",
-      description: "Onion, Capsicum, Grilled Mushroom & Tomato",
-      price: 23,
-    },
-    {
-      id: "m2",
-      name: "Double Cheese Margherita",
-      description: "Loaded with extra cheese",
-      price: 18,
-    },
-    {
-      id: "m3",
-      name: "Barbecue Burger",
-      description: "American, raw, premium veg",
-      price: 12,
-    },
-    {
-      id: "m4",
-      name: "Green Bowl",
-      description: "Healthy...and green...",
-      price: 12,
-    },
-  ];
+  const DUMMY_MEALS = useMemo(() => {
+    return [
+      {
+        id: "m1",
+        name: "Farmhouse Pizza",
+        description: "Onion, Capsicum, Grilled Mushroom & Tomato",
+        price: 23,
+      },
+      {
+        id: "m2",
+        name: "Double Cheese Margherita",
+        description: "Loaded with extra cheese",
+        price: 18,
+      },
+      {
+        id: "m3",
+        name: "Barbecue Burger",
+        description: "American, raw, premium veg",
+        price: 12,
+      },
+      {
+        id: "m4",
+        name: "Green Bowl",
+        description: "Healthy...and green...",
+        price: 12,
+      },
+    ];
+  }, []);
 
   const [allMeals, setAllMeals] = useState([]);
   useEffect(() => {
+    populateMeals();
+
     async function populateMeals() {
       if (!process.env.REACT_APP_DB_URL) {
         setAllMeals(DUMMY_MEALS);
@@ -62,9 +66,7 @@ function App() {
       }
       setAllMeals(tempMeals);
     }
-
-    populateMeals();
-  }, []);
+  }, [DUMMY_MEALS]);
 
   const [isCartVisible, setCartVisibility] = useState(false);
 

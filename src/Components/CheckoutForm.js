@@ -134,7 +134,7 @@ const CheckoutForm = (props) => {
           ref={nameInput}
           maxLength="30"
           className={nameClass}
-          defaultValue="Name"
+          defaultValue="Harsh"
         />
         <label></label>
         <span className={styles.errCont}>{nameErrMsg}</span>

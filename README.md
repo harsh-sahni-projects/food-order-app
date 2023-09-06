@@ -10,12 +10,12 @@ Core ReactJS concepts used in this app:
 - useState Hook
 - useRef Hook
 - useContext Hook
-- useReducer Hook
+- useReducer Hook,
+- useMemo Hook
 - React Fragment
 - React Portal
 - props
 - react-icons
-- React Portal
 - fetch API
 - Firebase database
 
@@ -23,15 +23,19 @@ Core ReactJS concepts used in this app:
 
 ### (i) Homepage
 
-<img src="./public/homepage.png">
+<img src="./public/screenshots/homepage.png">
 
 ### (ii) Cart
 
-<img src="./public/cart.png">
+<img src="./public/screenshots/cart.png">
+
+### (iii) Checkout
+
+<img src="./public/screenshots/checkout.png">
 
 # (C) Features
 
-1. Meal items are fetched from firebase database automatically when you land on homepage)
+1. Meal items are fetched from firebase database automatically when you land on homepage
 2. You can add items in your cart
 3. View cart items in a modal box
 4. Place your order. Order details will be stored in firebase db
